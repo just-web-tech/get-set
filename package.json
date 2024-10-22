@@ -1,0 +1,62 @@
+{
+  "name": "@just-web-tech/get-set",
+  "version": "1.0.0",
+  "description": "Type safe get and set properties using dot notation",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "author": "Dmitry Gaskarov <Mystache@yandex.ru>",
+  "keywords": [
+    "get",
+    "object",
+    "set",
+    "path",
+    "dot",
+    "dot notation",
+    "typescript",
+    "property",
+    "type safe",
+    "access",
+    "notation",
+    "deep"
+  ],
+  "homepage": "https://github.com/just-web-tech/get-set#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/just-web-tech/get-set.git"
+  },
+  "bugs": {
+    "url": "https://github.com/just-web-tech/get-set/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.mjs",
+      "require": "./dist/index.cjs.js"
+    }
+  },
+  "scripts": {
+    "dts": "tsc ./src/index.ts --declaration --emitDeclarationOnly --outDir dist",
+    "build": "vite build && npm run dts",
+    "test": "vitest run",
+    "check:types": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "22.8.1",
+    "@vitest/coverage-v8": "2.1.4",
+    "prettier": "3.3.3",
+    "typescript": "5.6.3",
+    "vite": "5.4.10",
+    "vitest": "2.1.4"
+  }
+}
